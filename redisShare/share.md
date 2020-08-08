@@ -16,7 +16,7 @@ redis的数据都在内存里面，所有运算都是内存级别的运算。要
 
 在说多路复用前，需要先了解socket。socket是我们操作系统提供给我们的接口。当客户端和服务器使用tcp通讯时，客户端封装一个请求对象req，将请求对象req序列化成字节数组。然后通过套接字将数组发送到服务器。服务器再反序列化成请求对象req进行处理。
 
-![socket](https://github.com/JacksieCheung/redis-note/edit/master/redisShare/socket.gif)
+![socket](socket.gif)
 
 这个socket对象存放在操作系统的内核中，有读缓冲和写缓冲。都是有限大小的数组结构。写字节时就是将字节数组复制到内核套接字对象的写缓冲中。读其实就是将读缓冲中的数组读出，在内存中反序列化。
 
